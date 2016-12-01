@@ -5,8 +5,9 @@ body {
 }
 
 div#root {
-  background-color: #A37838;
+  background-color: #A37855;
   background-image: url('https://www.transparenttextures.com/patterns/tileable-wood-colored.png');
   background-position: center;
+  background-size: 55%;
   height: 1400px;
 }

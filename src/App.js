@@ -14,6 +14,7 @@ class App extends Component {
     e.preventDefault();
     var ItemValue = this.state.todo.concat([this.state.newItemValue]);
     this.setState({todo: ItemValue, newItemValue: ""});
+    localStorage.setItem('todo', JSON.stringify(ItemValue))
   }
   ItemValueChanged(e) {
     this.setState({newItemValue: e.target.value})
@@ -23,6 +24,7 @@ class App extends Component {
     var tail = this.state.todo.slice(index + 1, this.state.todo.length);
     var newItems = head.concat(tail);
     this.setState({todo: newItems})
+    localStorage.setItem('todo', JSON.stringify(newItems))
   }
   render() {
     return (
