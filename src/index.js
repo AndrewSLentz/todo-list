@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 
 if (!localStorage.getItem('todo') || localStorage.getItem('todo') === '[]') {
-  localStorage.setItem('todo', JSON.stringify(['click an item to delete it']))
+  localStorage.setItem('todo', JSON.stringify([{text: 'click an item to delete it', completed: false}]))
 }
 
 ReactDOM.render(
