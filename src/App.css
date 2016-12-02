@@ -55,13 +55,15 @@ h2 {
   padding-top: 29px;
 }
 
+@media (max-width: 990px) {
+  .App {
+    padding: 0;
+  }
+}
+
 @media (max-width: 425px) {
   .App-logo {
     height: 50px;
-  }
-
-  .App {
-    padding: 0;
   }
 
   h2 {
