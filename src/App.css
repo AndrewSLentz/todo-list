@@ -39,15 +39,43 @@ h2 {
 }
 
 .first {
+  display: flex;
+  justify-content: center;
   color: darkblue;
   font-family: cursive;
   font-size: 24px;
   line-height: 2.1;
 }
 
-.hover:hover {
+.fa {
+  margin-left: 20px;
+  margin-top: 10px;
+  visibility: hidden;
+}
+
+.first:hover .fa {
+  visibility: visible;
+}
+
+span {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fa:hover {
   color: crimson;
-  cursor: url('data:image/x-icon;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA66TnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAC4AAABuAAAA4AAAAdwAAAO4AAAHcAAABuAAAAXAAAADgAAAAAAAAA///////////////////////////////////////////////////////////////////////////////////////////////////////////+D////A////gP///wD///4A///8Af//+AP///AH///wD///8B////A////wf///8='), auto;
+  cursor: pointer;
+  /*cursor: url('data:image/x-icon;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA66TnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAC4AAABuAAAA4AAAAdwAAAO4AAAHcAAABuAAAAXAAAADgAAAAAAAAA///////////////////////////////////////////////////////////////////////////////////////////////////////////+D////A////gP///wD///4A///8Af//+AP///AH///wD///8B////A////wf///8='), auto;*/
+}
+
+span:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: line-through;
+}
+
+i:hover ~ span {
+  color: crimson;
   font-weight: bolder;
 }
 

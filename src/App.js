@@ -26,12 +26,27 @@ class App extends Component {
   ItemValueChanged(e) {
     this.setState({newItemValue: e.target.value})
   }
-  onItemClick(index, e) {
+  onItemCompleteClick(index, e) {
+    var completedToggle = this.state.todo.slice(0);
+    completedToggle[index].completed = !completedToggle[index].completed;
+    console.log(completedToggle[index].completed)
+    this.setState({'todo': completedToggle})
+    localStorage.setItem('todo', JSON.stringify(completedToggle))
+  }
+  onItemDeleteClick(index, e) {
     var head = this.state.todo.slice(0, index);
     var tail = this.state.todo.slice(index + 1, this.state.todo.length);
     var newItems = head.concat(tail);
-    this.setState({todo: newItems})
-    localStorage.setItem('todo', JSON.stringify(newItems))
+    if (this.state.todo[index].completed) {
+      this.setState({todo: newItems})
+      localStorage.setItem('todo', JSON.stringify(newItems))
+    } else {
+      var confirmed = confirm("You are about to delete an item that has not been marked as complete. Are you sure you wish to continue?");
+      if (confirmed === true) {
+        this.setState({todo: newItems})
+        localStorage.setItem('todo', JSON.stringify(newItems))
+      }
+    }
   }
   render() {
     return (
@@ -62,17 +77,20 @@ class App extends Component {
         }}>
           <ul style={{
             padding: '0',
-            margin: '0',
-            display: 'flex',
-            flexDirection: 'column'
+            margin: '0'
           }}>
             {this.state.todo.map((listItem, index) => {
               return (
                 <li className='first' style={{
                   listStyle: 'none',
                   margin: '0'
-                }} onClick={this.onItemClick.bind(this, index)} key={index}>
-                  <span className='hover'>{listItem.text}</span>
+                }} key={index}>
+                  <i onClick={this.onItemDeleteClick.bind(this, index)} className="fa fa-trash" aria-hidden="true"></i>
+                  <span style={{
+                    textDecoration: listItem.completed
+                      ? 'line-through'
+                      : 'none'
+                  }} onClick={this.onItemCompleteClick.bind(this, index)} className='hover'>{listItem.text}</span>
                 </li>
               )
             })}
