@@ -60,6 +60,10 @@ h2 {
     height: 50px;
   }
 
+  .App {
+    padding: 0;
+  }
+
   h2 {
     margin: .5rem auto;
   }
