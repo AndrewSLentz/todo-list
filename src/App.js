@@ -33,6 +33,13 @@ class App extends Component {
     this.setState({'todo': completedToggle})
     localStorage.setItem('todo', JSON.stringify(completedToggle))
   }
+  clearCompletedItems(array) {
+    var stillTodo = array.filter((item, index) => {
+      return !item.completed
+    })
+    this.setState({todo: stillTodo})
+    localStorage.setItem('todo', JSON.stringify(stillTodo))
+  }
   onItemDeleteClick(index, e) {
     var head = this.state.todo.slice(0, index);
     var tail = this.state.todo.slice(index + 1, this.state.todo.length);
@@ -65,6 +72,12 @@ class App extends Component {
               borderRadius: '5px',
               borderStyle: 'groove'
             }}>Add to list</button>
+            <button className='active' style={{
+              fontSize: '18px',
+              marginLeft: '.5rem',
+              borderRadius: '5px',
+              borderStyle: 'groove'
+            }} onClick={this.clearCompletedItems.bind(this, this.state.todo)}>Clear Completed items</button>
           </form>
         </div>
         <div style={{
