@@ -90,13 +90,12 @@ i:hover ~ span {
   .App {
     padding: 0;
   }
-}
-
-@media (max-width: 425px) {
   .App-logo {
     height: 50px;
   }
+}
 
+@media (max-width: 425px) {
   h2 {
     margin: .5rem auto;
   }
