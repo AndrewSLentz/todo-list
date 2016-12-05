@@ -48,7 +48,7 @@ class App extends Component {
       this.setState({todo: newItems})
       localStorage.setItem('todo', JSON.stringify(newItems))
     } else {
-      var confirmed = confirm("You are about to delete an item that has not been marked as complete. Are you sure you wish to continue?");
+      var confirmed = confirm(this.state.todo[index].text + " has not been marked as complete. Are you sure you wish to delete?");
       if (confirmed === true) {
         this.setState({todo: newItems})
         localStorage.setItem('todo', JSON.stringify(newItems))
