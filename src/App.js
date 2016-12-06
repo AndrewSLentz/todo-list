@@ -55,6 +55,16 @@ class App extends Component {
       }
     }
   }
+  onMouseEnterDelete() {
+    this.setState({
+      buttonIsHovered: true
+    })
+  }
+  onMouseLeaveDelete() {
+    this.setState({
+      buttonIsHovered: false
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -72,8 +82,9 @@ class App extends Component {
               borderRadius: '5px',
               borderStyle: 'groove'
             }}>Add to list</button>
-            <button className='active' style={{
+            <button onMouseEnter={this.onMouseEnterDelete.bind(this)} onMouseLeave={this.onMouseLeaveDelete.bind(this)} className='active' style={{
               fontSize: '18px',
+              marginTop: '5px',
               marginLeft: '.5rem',
               borderRadius: '5px',
               borderStyle: 'groove'
@@ -99,11 +110,11 @@ class App extends Component {
                   margin: '0'
                 }} key={index}>
                   <i onClick={this.onItemDeleteClick.bind(this, index)} className="fa fa-trash" aria-hidden="true"></i>
-                  <span style={{
+                  <span className={listItem.completed && this.state.buttonIsHovered ? 'hover completed' : 'hover'} style={{
                     textDecoration: listItem.completed
                       ? 'line-through'
                       : 'none'
-                  }} onClick={this.onItemCompleteClick.bind(this, index)} className='hover'>{listItem.text}</span>
+                  }} onClick={this.onItemCompleteClick.bind(this, index)}>{listItem.text}</span>
                 </li>
               )
             })}

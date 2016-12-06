@@ -16,7 +16,6 @@ h2 {
   background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
   box-shadow: 3px 2px 10px black;
   color: black;
-  height: 150px;
   margin: 0 auto;
   max-width: 933px;
   outline: 1px solid darkgrey;
@@ -80,6 +79,10 @@ span:hover {
 i:hover ~ span {
   color: crimson;
   font-weight: bolder;
+}
+
+.completed {
+  color: crimson;
 }
 
 .first:first-of-type {
