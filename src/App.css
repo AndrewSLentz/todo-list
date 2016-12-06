@@ -37,6 +37,11 @@ h2 {
   transform: translateY(2px);
 }
 
+.notepad {
+  background: url(https://i.stack.imgur.com/ynxjD.png) repeat-y;
+  background-position: center;
+}
+
 .first {
   padding-bottom: 25px;
   color: darkblue;
@@ -89,12 +94,15 @@ i:hover ~ span {
   padding-top: 43px;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 940px) {
   .App {
     padding: 0;
   }
   .App-logo {
     height: 50px;
+  }
+  .notepad {
+    background-position: -30px 13.2px;
   }
 }
 

@@ -92,13 +92,11 @@ class App extends Component {
             }} onClick={this.clearCompletedItems.bind(this, this.state.todo)}>Clear Completed items</button>
           </form>
         </div>
-        <div style={{
+        <div className='notepad' style={{
           boxShadow: '1px 2px 10px black',
           margin: '0 auto',
           maxWidth: '974px',
-          minHeight: '1100px',
-          background: 'url(https://i.stack.imgur.com/ynxjD.png) repeat-y',
-          backgroundPosition: 'center'
+          minHeight: '1100px'
         }}>
           <ul style={{
             padding: '0',
