@@ -29,7 +29,6 @@ class App extends Component {
   onItemCompleteClick(index, e) {
     var completedToggle = this.state.todo.slice(0);
     completedToggle[index].completed = !completedToggle[index].completed;
-    console.log(completedToggle[index].completed)
     this.setState({'todo': completedToggle})
     localStorage.setItem('todo', JSON.stringify(completedToggle))
   }
@@ -77,6 +76,7 @@ class App extends Component {
               fontSize: '16px'
             }} placeholder='enter new item todo' value={this.state.newItemValue} onChange={this.ItemValueChanged.bind(this)}/>
             <button className="active" style={{
+              backgroundColor: 'lightgrey',
               fontSize: '18px',
               marginLeft: '.5rem',
               borderRadius: '5px',
@@ -84,6 +84,7 @@ class App extends Component {
             }}>Add to list</button>
             <button onMouseEnter={this.onMouseEnterDelete.bind(this)} onMouseLeave={this.onMouseLeaveDelete.bind(this)} className='active' style={{
               fontSize: '18px',
+              backgroundColor: 'lightgrey',
               marginTop: '5px',
               marginLeft: '.5rem',
               borderRadius: '5px',
@@ -96,7 +97,7 @@ class App extends Component {
           margin: '0 auto',
           maxWidth: '974px',
           minHeight: '1100px',
-          background: 'url(http://i.stack.imgur.com/ynxjD.png) repeat-y',
+          background: 'url(https://i.stack.imgur.com/ynxjD.png) repeat-y',
           backgroundPosition: 'center'
         }}>
           <ul style={{
